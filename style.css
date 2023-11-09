@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* Elem méretébe beletartozik a padding és a border */
+    background-color: rgba(240, 248, 255, 0);
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 0;
+   /*display: inline;*/
+}
+
+body{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    background-image: url("image/WindowsXP.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+main{
+    position: absolute;
+    left: 50%; /* relative to nearest positioned ancestor or body element */
+    top: 50%; /*  relative to nearest positioned ancestor or body element */
+    transform: translate(-50%, -50%); /* relative to element's height & width */
+
+    border: 3px solid black;
+    background-color: rgba(72, 255, 0, 0.781);
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+    "h h h"
+    "n n n"
+    "aB a aJ"
+    "f f f";
+}
+/*GRID*/
+header{
+    grid-area: h;
+}
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "d1 d2 d3";
+}
+nav{
+    grid-area: n;
+}
+nav a{
+    text-decoration: none;
+}
+
+footer{
+    grid-area: f;
+}
+aside#bal{
+    grid-area: aB;
+}
+aside#jobb{
+    grid-area: aJ;
+}
+div#kep1{
+    grid-area: d1;
+}
+div#kep2{
+    grid-area: d2;
+}
+div#kep3{
+    grid-area: d3;
+}
+
+
+
+header, nav, article, footer, aside{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* MOBIL nézet - reszponzivitás */
+@media only screen and (max-width: 600px){
+    body, main{
+        background-color: blue;
+        width: 100%;
+    }
+    main{
+        background-color: antiquewhite;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "h"
+        "n"
+        "aB"
+        "a"
+        "aJ"
+        "f";
+    }
+}
+img{
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+    padding: 2px 10px;
+}
